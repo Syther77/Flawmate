@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+header.scrolled{
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+
+
+.audios-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+    text-align: center;
+}
+
+.audios-page h1 {
+    font-size: 5rem;
+    color: #b74b4b;
+    margin-bottom: 1rem;
+}
+
+.audios-page p {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+    color: #ccc;
+}
+
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.audio-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(183,75,75,0.3);
+    transition: transform 0.3s ease;
+}
+
+.audio-card:hover {
+    transform: translateY(-8px);
+}
+
+.audio-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+audio {
+    width: 100%;
+}
+
+/* PLAYLIST SECTION */
+.playlist-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.playlist-card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.playlist-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.playlist-card:hover img {
+    transform: scale(1.1);
+}
+
+.playlist-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.playlist-card:hover .playlist-overlay {
+    opacity: 1;
+}
+
+.playlist-overlay i {
+    font-size: 4rem;
+    color: #1db954;
+    margin-bottom: 1rem;
+}
+
+.playlist-overlay h3 {
+    font-size: 2.2rem;
+    color: white;
+}
+
+/* SONG LIST */
+.song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.song-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.song-card:hover {
+    background: rgba(183,75,75,0.15);
+}
+
+.song-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.8rem;
+    object-fit: cover;
+}
+
+.song-info h4 {
+    font-size: 1.8rem;
+}
+
+.song-info p {
+    font-size: 1.4rem;
+    color: #aaa;
+}
+
+.song-card a {
+    margin-left: auto;
+    font-size: 2.4rem;
+    color: #1db954;
+}
+
